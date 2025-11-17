@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ulasan Pelanggan - Happy Jems PlayGame</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <style>
+        /* CSS Kustom */
+        body {
+            padding-top: 70px;
+            /* Jarak agar konten tidak tertutup fixed navbar */
+            background-color: #f0f2f5;
+        }
+
+        .form-container {
+            max-width: 700px;
+            margin: 30px auto;
+            padding: 40px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .footer-text {
+            color: #fff;
+            padding: 15px 0;
+        }
+        
+        /* Gaya Khusus Rating Bintang */
+        .rating-input {
+            font-size: 1.8rem; /* Ukuran bintang lebih besar */
+            color: #ffc107; /* Warna Bintang Kuning */
+            /* Menggunakan flex-row-reverse agar urutan bintang terbalik (5 ke 1) */
+            direction: rtl; 
+        }
+        .rating-input input {
+            display: none;
+        }
+        .rating-input label {
+            cursor: pointer;
+            margin-right: 5px;
+            transition: color 0.2s;
+        }
+        /* Mengatur bintang default dan bintang yang dipilih */
+        .rating-input > label::before {
+            content: "\2606"; /* Bintang Kosong (Outline) */
+            color: #ccc;
+        }
+        .rating-input input:checked ~ label::before {
+            content: "\2605"; /* Bintang Isi */
+            color: #ffc107;
+        }
+        .rating-input label:hover::before,
+        .rating-input label:hover ~ label::before {
+            content: "\2605";
+            color: #ffda6a; /* Warna hover */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar fixed-top bg-dark navbar-expand-lg" data-bs-theme="dark">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">🎮 Happy Jems PlayGame</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Pilihan
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="PS4.html">PS 4</a></li>
+                                <li><a class="dropdown-item" href="PS4PORT.html">PS 4 Box</a></li>
+                                <li><a class="dropdown-item" href="PS5.html">PS 5</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="index.html#produk">Produk Kami</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#kontak">My Contact</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex ms-lg-3" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Cari unit..."
+                            aria-label="Search" />
+                        <button class="btn btn-outline-info" type="submit">Cari</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="bukutamu">
+        <div class="container">
+            <div class="form-container">
+                <h2 class="mb-2 text-center text-success fw-bold">⭐ Formulir Ulasan Pelanggan</h2>
+                <p class="text-center mb-5 text-muted">Bagikan pengalaman sewa PlayStation Anda bersama kami!</p>
+
+                <form action="#" method="POST">
+
+                    <h5 class="mb-3 text-secondary border-bottom pb-2">Detail Pengalaman</h5>
+                    
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6">
+                            <label for="namaPenyewa" class="form-label">Nama Anda</label>
+                            <input type="text" class="form-control" id="namaPenyewa" name="nama_penyewa" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="jenisPS" class="form-label">Unit PS yang Disewa</label>
+                            <select class="form-select" id="jenisPS" name="jenis_ps" required>
+                                <option selected disabled value="">Pilih Unit...</option>
+                                <option value="PS5">PS5</option>
+                                <option value="PS4 Pro">PS4 Pro</option>
+                                <option value="PS4 Slim">PS4 Slim</option>
+                                <option value="PS4 Portable">PS4 Portable Box</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label d-block text-secondary border-bottom pb-2">Rating Pelayanan Kami</label>
+                        <div class="rating-input d-flex justify-content-start mt-2">
+                            <input type="radio" id="star5" name="rating" value="5" required>
+                            <label for="star5" title="5 Bintang - Sangat Baik"></label>
+
+                            <input type="radio" id="star4" name="rating" value="4">
+                            <label for="star4" title="4 Bintang - Baik"></label>
+
+                            <input type="radio" id="star3" name="rating" value="3">
+                            <label for="star3" title="3 Bintang - Cukup"></label>
+
+                            <input type="radio" id="star2" name="rating" value="2">
+                            <label for="star2" title="2 Bintang - Kurang Baik"></label>
+
+                            <input type="radio" id="star1" name="rating" value="1">
+                            <label for="star1" title="1 Bintang - Buruk"></label>
+                            <span class="ms-3 text-muted" style="font-size: 1rem;">(Wajib diisi)</span>
+                        </div>
+                    </div>
+
+
+                    <div class="mb-4">
+                        <label for="testimoni" class="form-label text-secondary">Komentar dan Testimoni Anda</label>
+                        <textarea class="form-control" id="testimoni" name="testimoni" rows="4"
+                            placeholder="Contoh: PS5 yang disewa bersih, pengiriman tepat waktu, dan pelayanannya ramah!"></textarea>
+                        <div id="testimoniHelp" class="form-text">Kami sangat menghargai ulasan jujur Anda.</div>
+                    </div>
+
+                    <div class="form-check mb-5">
+                        <input class="form-check-input" type="checkbox" value="Ya" id="izinkanPublikasi"
+                            name="izinkan_publikasi" checked>
+                        <label class="form-check-label" for="izinkanPublikasi">
+                            Saya mengizinkan ulasan ini dipublikasikan di media sosial/website toko.
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-success btn-lg w-100 fw-bold">Kirim Ulasan</button>
+
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <nav class="navbar bg-dark mt-5" data-bs-theme="dark">
+            <div class="container-fluid justify-content-center">
+                <span class="navbar-text footer-text">
+                    &copy; 2025 Happy Jems PlayGame. All rights reserved.
+                </span>
+            </div>
+        </nav>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

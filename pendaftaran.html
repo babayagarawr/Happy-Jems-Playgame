@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pesan Sewa PlayStation - Happy Jems PlayGame</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        
+        body {
+            padding-top: 70px;
+            
+            background-color: #f8f9fa;
+        }
+
+        .form-container {
+            max-width: 700px;
+            margin: 30px auto;
+            padding: 40px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .footer-text {
+            color: #fff;
+            padding: 15px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar fixed-top bg-dark navbar-expand-lg" data-bs-theme="dark">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">🎮 Happy Jems PlayGame</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Pilihan
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="PS4.html">PS 4</a></li>
+                                <li><a class="dropdown-item" href="PS4PORT.html">PS 4 Box</a></li>
+                                <li><a class="dropdown-item" href="PS5.html">PS 5</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="index.html#produk">Produk Kami</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#kontak">My Contact</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex ms-lg-3" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Cari unit..."
+                            aria-label="Search" />
+                        <button class="btn btn-outline-info" type="submit">Cari</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="pesan">
+        <div class="container">
+            <div class="form-container">
+                <h2 class="mb-4 text-center text-primary fw-bold">📝 Formulir Sewa PlayStation</h2>
+                <p class="text-center mb-5 text-muted">Isi data diri dan detail sewa Anda dengan lengkap. Kami akan menghubungi Anda untuk konfirmasi total biaya.</p>
+
+                <form action="#" method="POST">
+
+                    <h5 class="mb-3 text-secondary border-bottom pb-2">Data Penyewa</h5>
+
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="namaLengkap" class="form-label">Nama Lengkap</label>
+                            <input type="text" class="form-control" id="namaLengkap" name="nama_lengkap" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="nomorHP" class="form-label">Nomor WhatsApp/HP Aktif</label>
+                            <input type="tel" class="form-control" id="nomorHP" name="nomor_hp"
+                                placeholder="Contoh: 081234567890" required>
+                        </div>
+                        <div class="col-12">
+                            <label for="alamatLengkap" class="form-label">Alamat Pengiriman/Pengambilan</label>
+                            <textarea class="form-control" id="alamatLengkap" name="alamat_lengkap" rows="3"
+                                required></textarea>
+                            <div class="form-text">Pastikan alamat lengkap untuk penghitungan biaya kirim/jemput.</div>
+                        </div>
+                    </div>
+
+                    <h5 class="mt-5 mb-3 text-secondary border-bottom pb-2">Detail Sewa</h5>
+
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="jenisPS" class="form-label">Jenis PlayStation</label>
+                            <select class="form-select" id="jenisPS" name="jenis_ps" required>
+                                <option selected disabled value="">Pilih Unit...</option>
+                                <option value="PS5 Disc Edition">PS5 Disc Edition</option>
+                                <option value="PS5 Digital Edition">PS5 Digital Edition</option>
+                                <option value="PS4 Slim">PS4 Slim</option>
+                                <option value="PS4 Pro">PS4 Pro</option>
+                                <option value="PS4 Portable">PS4 Portable Box (All-in-One)</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="durasiSewa" class="form-label">Durasi Sewa (Hari)</label>
+                            <input type="number" class="form-control" id="durasiSewa" name="durasi_sewa" min="1"
+                                placeholder="Minimal 1 hari" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="tanggalMulai" class="form-label">Tanggal Mulai Sewa</label>
+                            <input type="date" class="form-control" id="tanggalMulai" name="tanggal_mulai" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="waktuPengambilan" class="form-label">Waktu Pengambilan/Pengiriman</label>
+                            <input type="time" class="form-control" id="waktuPengambilan" name="waktu_pengambilan"
+                                required>
+                        </div>
+                    </div>
+
+                    <h5 class="mt-5 mb-3 text-secondary border-bottom pb-2">Opsi Tambahan</h5>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Ya" id="tambahController"
+                            name="tambah_controller">
+                        <label class="form-check-label" for="tambahController">
+                            Tambah 1 Controller Ekstra (biaya tambahan berlaku)
+                        </label>
+                    </div>
+                    <div class="form-check mb-5">
+                        <input class="form-check-input" type="checkbox" value="Ya" id="layananAntarJemput"
+                            name="layanan_antar_jemput">
+                        <label class="form-check-label" for="layananAntarJemput">
+                            Gunakan Layanan Antar & Jemput (Cek biaya admin, Area terbatas)
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-lg w-100 fw-bold">KIRIM PERMINTAAN SEWA</button>
+
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <nav class="navbar bg-dark mt-5" data-bs-theme="dark">
+            <div class="container-fluid justify-content-center">
+                <span class="navbar-text footer-text">
+                    &copy; 2025 Happy Jems PlayGame. All rights reserved.
+                </span>
+            </div>
+        </nav>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
