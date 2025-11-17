@@ -9,10 +9,8 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     
     <style>
-        /* CSS Kustom */
         body {
             padding-top: 70px;
-            /* Jarak agar konten tidak tertutup fixed navbar */
             background-color: #f0f2f5;
         }
 
@@ -30,11 +28,9 @@
             padding: 15px 0;
         }
         
-        /* Gaya Khusus Rating Bintang */
         .rating-input {
-            font-size: 1.8rem; /* Ukuran bintang lebih besar */
-            color: #ffc107; /* Warna Bintang Kuning */
-            /* Menggunakan flex-row-reverse agar urutan bintang terbalik (5 ke 1) */
+            font-size: 1.8rem;
+            color: #ffc107; 
             direction: rtl; 
         }
         .rating-input input {
@@ -45,19 +41,18 @@
             margin-right: 5px;
             transition: color 0.2s;
         }
-        /* Mengatur bintang default dan bintang yang dipilih */
         .rating-input > label::before {
-            content: "\2606"; /* Bintang Kosong (Outline) */
+            content: "\2606"; 
             color: #ccc;
         }
         .rating-input input:checked ~ label::before {
-            content: "\2605"; /* Bintang Isi */
+            content: "\2605";
             color: #ffc107;
         }
         .rating-input label:hover::before,
         .rating-input label:hover ~ label::before {
             content: "\2605";
-            color: #ffda6a; /* Warna hover */
+            color: #ffda6a;
         }
     </style>
 </head>
